@@ -1,0 +1,23 @@
+/** @format */
+.callout {
+  border-radius: 8px;
+  border-width: 1px;
+}
+
+.callout[data-callout="insight"],
+.callout[data-callout="idea"] {
+  --callout-color: var(--color-yellow-rgb);
+  --callout-icon: lamp-desk;
+}
+
+.callout[data-callout="calendar"] {
+  --callout-color: var(--color-blue-rgb);
+  --callout-icon: calendar-days;
+}
+
+.callout[data-callout="topic"],
+.callout[data-callout="chapter"],
+.callout[data-callout="header"] {
+  --callout-color: var(--color-green-rgb);
+  --callout-icon: arrow-right-circle;
+}

@@ -1,0 +1,22 @@
+.mermaid svg .node circle {
+    fill: #427b58 !important;
+    stroke: #689d6a !important;
+    stroke-width: 2px !important;
+}
+
+.mermaid svg .node rect {
+    fill: #ae3a03 !important;
+    stroke: #fe8018 !important;
+    stroke-width: 2px !important;
+}
+
+.mermaid svg .node polygon {
+    fill: #9d0006 !important;
+    stroke: #fb4934 !important;
+    stroke-width: 2px !important;
+}
+
+.mermaid .label span {
+    color: #ebdbb2 !important;
+    fill: #ebdbb2 !important;
+}

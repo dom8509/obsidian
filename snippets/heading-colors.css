@@ -1,0 +1,190 @@
+:root {
+    --dark0-hard: #1d2021;
+    --dark0: #282828;
+    --dark0-soft: #32302f;
+    --dark1: #3c3836;
+    --dark2: #504945;
+    --dark3: #665c54;
+    --dark4: #7c6f64;
+  
+    --gray: #928374;
+  
+    --light0-hard: #f9f5d7;
+    --light0: #fbf1c7;
+    --light0-soft: #f2e5bc;
+    --light1: #ebdbb2;
+    --light2: #d5c4a1;
+    --light3: #bdae93;
+    --light4: #a89984;
+  
+    --bright-red: #fb4934;
+    --bright-green: #b8bb26;
+    --bright-yellow: #fabd2f;
+    --bright-blue: #83a598;
+    --bright-purple: #d3869b;
+    --bright-aqua: #8ec07c;
+    --bright-orange: #fe8019;
+  
+    --neutral-red: #cc241d;
+    --neutral-green: #98971a;
+    --neutral-yellow: #d79921;
+    --neutral-blue: #458588;
+    --neutral-purple: #b16286;
+    --neutral-aqua: #689d6a;
+    --neutral-orange: #d65d0e;
+  
+    --faded-red: #9d0006;
+    --faded-green: #79740e;
+    --faded-yellow: #b57614;
+    --faded-blue: #076678;
+    --faded-purple: #8f3f71;
+    --faded-aqua: #427b58;
+    --faded-orange: #af3a03;
+  
+    /* These are for: */
+    /** outliner bullet lines fade to color in edit mode -- https://discord.com/channels/686053708261228577/702656734631821413/884586663064535141 */
+    --rgb-faded-red: 157, 0, 6;
+    --rgb-faded-green: 121, 116, 14;
+    --rgb-faded-yellow: 181, 118, 20;
+    --rgb-faded-blue: 7, 102, 120;
+    --rgb-faded-purple: 143, 63, 113;
+    --rgb-faded-aqua: 66, 123, 88;
+    --rgb-faded-orange: 175, 58, 3;
+    --alpha-ad: 0.68;
+    --alpha-65: 0.4;
+  
+    --text-title-h1: var(--gray);
+    --text-title-h2: var(--neutral-orange);
+    --text-title-h3: var(--neutral-yellow);
+    --text-title-h4: var(--neutral-green);
+    --text-title-h5: var(--neutral-aqua);
+    --text-title-h6: var(--neutral-purple);
+  }
+  
+  .theme-dark {
+    --text-title-h1: var(--neutral-red);
+    --text-title-h2: var(--neutral-orange);
+    --text-title-h3: var(--neutral-yellow);
+    --text-title-h4: var(--neutral-green);
+    --text-title-h5: var(--neutral-aqua);
+    --text-title-h6: var(--neutral-purple);
+    --text-a: var(--bright-orange);
+    --text-a-hover: var(--bright-blue);
+  }
+  
+  .theme-light {
+    --text-title-h1: var(--faded-red);
+    --text-title-h2: var(--faded-orange);
+    --text-title-h3: var(--faded-yellow);
+    --text-title-h4: var(--faded-green);
+    --text-title-h5: var(--faded-aqua);
+    --text-a: var(--neutral-orange);
+    --text-a-hover: var(--neutral-blue);
+  }
+  
+  p {
+    margin-block-start: 10px;
+  }
+  
+  .markdown-preview-view.is-readable-line-width .markdown-preview-section,
+  .markdown-source-view.is-readable-line-width .CodeMirror {
+    line-height: 25px;
+  }
+  
+  a,
+  .cm-hmd-internal-link {
+    color: var(--text-a) !important;
+    text-decoration: none !important;
+  }
+  
+  a:hover,
+  .cm-hmd-internal-link:hover,
+  .cm-url {
+    color: var(--text-a-hover) !important;
+    text-decoration: none !important;
+  }
+  
+  .cm-header-1,
+  .markdown-preview-section h1 {
+    color: var(--text-title-h1) !important;
+  }
+  
+  .cm-header-2,
+  .markdown-preview-section h2 {
+    color: var(--text-title-h2) !important;
+  }
+  
+  .cm-header-3,
+  .markdown-preview-section h3 {
+    color: var(--text-title-h3) !important;
+  }
+  
+  .cm-header-4,
+  .markdown-preview-section h4 {
+    color: var(--text-title-h4) !important;
+  }
+  
+  .cm-header-5,
+  .markdown-preview-section h5 {
+    color: var(--text-title-h5) !important;
+  }
+  
+  .cm-header-6,
+  .markdown-preview-section h6 {
+    color: var(--text-title-h6) !important;
+  }
+  
+  .markdown-preview-view hr {
+    margin-block-start: 4em;
+    margin-block-end: 4em;
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(to right, var(--background-primary), var(--text-accent), var(--background-primary));
+  }
+  
+  .markdown-preview-view hr::after {
+    /* content: '§'; */
+    content: "ᛟ";
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    /* transform: translate(-50%, -50%) rotate(60deg); */
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: 50% 50%;
+    padding: 0.5rem;
+    color: var(--bright-aqua);
+    background-color: var(--background-primary);
+  }
+  /** ______ 2.13.1 Page Break -- https://gist.github.com/liamcain/81679412643690a7cdd13dff4dc909ce */
+  @media print {
+    /* pagebreak before all ## headings */
+    h2 {
+      page-break-before: always;
+    }
+  
+    h3,
+    h4 {
+      page-break-after: avoid;
+    }
+  
+    pre,
+    blockquote {
+      page-break-inside: avoid;
+    }
+  
+    /* use double <hr> ('---') to indicate a page break */
+    hr + hr {
+      page-break-before: always;
+      visibility: hidden;
+    }
+  
+    :not(hr) + hr {
+      visibility: hidden;
+    }
+  
+    :not(hr) + hr + :not(hr):not(h2) {
+      border-top: 1px solid black;
+      padding-top: 2em;
+    }
+  }
+  
